@@ -13,7 +13,8 @@ CURRENT_TAG=$(curl -s -L \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/repos/yetanotherco/aligned_layer/releases/latest \
   | grep '"tag_name":' | awk -F'"' '{print $4}')
-RELEASE_URL="https://github.com/yetanotherco/aligned_layer/releases/tag/$CURRENT_TAG/"
+# RELEASE_URL="https://github.com/yetanotherco/aligned_layer/releases/tag/$CURRENT_TAG/"
+RELEASE_URL="https://github.com/yetanotherco/aligned_layer/releases/download/v0.1.6/"
 
 ARCH=$(uname -m)
 
