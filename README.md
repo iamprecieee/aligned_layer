@@ -36,10 +36,10 @@ Testnet contract is deployed on Holesky on the address:
 
 ###  How to use the testnet
 
-Download and install Aligned to send proofs in the testnet:
+- Download and install Aligned to send proofs in the testnet:
 
 ```bash
-curl -L https://raw.githubusercontent.com/yetanotherco/aligned_layer/main/batcher/aligned/install_aligned.sh | bash
+curl -L https://raw.githubusercontent.com/iamprecieee/aligned_layer/main/batcher/aligned/install_aligned.sh | bash
 ```
 
 If you are experiencing issues, upgrade by running the same command.
@@ -48,13 +48,13 @@ If you are experiencing issues, upgrade by running the same command.
 
 We are going to download a proof previously generated, send it to Aligned, and retrieve the results from Ethereum Holesky testnet. Aligned is using EigenLayer to do a fast and cheap verification of more than one thousand proofs per second.
 
-Download an example SP1 proof file with it's ELF file using:
+- Download an example SP1 proof file with it's ELF file using:
 
 ```bash
 curl -L https://raw.githubusercontent.com/yetanotherco/aligned_layer/main/batcher/aligned/get_proof_test_files.sh | bash
 ```
 
-Send the proof with:
+- Send the proof with:
 
 ```bash
 rm -rf ~/aligned_verification_data/ &&
@@ -76,7 +76,7 @@ You should get a response like this:
 https://explorer.alignedlayer.com/batches/0x8ea98526e48f72d4b49ad39902fb320020d3cf02e6506c444300eb3619db4c13```
 ```
 
-You can use the link to the explorer to check the status of your transaction. Then after three blocks, you can check if it has been verified with:
+- You can use the link to the explorer to check the status of your transaction. Then after three blocks, you can check if it has been verified with:
 
 ```bash
 aligned verify-proof-onchain \
@@ -96,6 +96,10 @@ If the proof wasn't verified you should get this result:
 ```bash
 [2024-06-17T21:59:09Z INFO  aligned] Your proof was not included in the batch.
 ```
+
+- Take a screenshot of your proof and make a tweet with your explorer batch url(get this from your terminal). You can tag the official [@alignedlayer](https://x.com/alignedlayer) account.
+
+- Copy your tweet link, join [discord](https://discord.gg/alignedlayer) and send it on the #testnet channel.
 
 If you want to verify your proof in your own contract, use a static call to the Aligned contract. You can use the following [Caller Contract](contracts/src/core/VerifyBatchInclusionCaller.sol) as an example.
 
